@@ -1,18 +1,28 @@
 import { ReactNode } from "react";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-// import Navbar from "../components/Navbar";
+import { UserProvider } from "../contexts/UserContext";
 
-const Layout = ({ children }: { children: ReactNode }) => {
+type LayoutProps = {
+  children: ReactNode;
+  setOpenModal: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+const Layout = ({ children, setOpenModal }: LayoutProps) => {
+  const handleOpenModal = () => {
+    setOpenModal(true);
+  };
+
   return (
-    <div className="flex h-screen w-screen">
-      {/* <Navbar /> */}
-      <div className="flex flex-col h-full w-full">
-        <Header />
-        {children}
-        <Footer />
+    <UserProvider>
+      <div className="flex h-screen w-screen relative">
+        <div className="flex flex-col h-full w-full">
+          <Header handleOpenModal={handleOpenModal} />
+          {children}
+          <Footer />
+        </div>
       </div>
-    </div>
+    </UserProvider>
   );
 };
 

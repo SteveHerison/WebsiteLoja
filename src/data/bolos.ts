@@ -3,9 +3,9 @@ import FotoDois from "../assets/fotosBolo/IMG_4538.JPG";
 import FotoTres from "../assets/fotosBolo/IMG_4414.JPG";
 import FotoQuatro from "../assets/fotosBolo/IMG_4537.JPG";
 
-import { Image } from "../types/listBolo";
+import { Produto } from "../types/listBolo";
 
-export const listBolo: Image[] = [
+export const listBolo: Produto[] = [
   {
     id: 1,
     src: FotoUm,

@@ -1,14 +1,13 @@
-import { useState } from "react";
+import { useContext } from "react";
 import { listBolo } from "../../data/bolos";
+import { CarrinhoContext } from "../../contexts/UserContext";
 
 const Index = () => {
-  // Estado para armazenar o valor total
-  const [total, setTotal] = useState<number>(0);
+  const carrinhoContext = useContext(CarrinhoContext);
 
-  // Função para adicionar o valor do bolo ao total
-  const handleAdd = (valor: number) => {
-    setTotal((prevTotal) => prevTotal + valor);
-  };
+  if (!carrinhoContext) return null;
+
+  const { adicionarProduto } = carrinhoContext;
 
   return (
     <div>
@@ -24,7 +23,7 @@ const Index = () => {
                 alt={`Bolo ${id}`}
                 className="w-full h-40 object-cover rounded-t-xl"
               />
-              <div className="text-center bg-red-50 rounded-b-xl">
+              <div className="text-center bg-red-50 rounded-b-xl w-full px-1">
                 <h3 className="text-xl font-semibold text-yellow-950">
                   {title}
                 </h3>
@@ -34,7 +33,7 @@ const Index = () => {
             <div className="flex items-center justify-between">
               <button
                 className="bg-yellow-950 p-1 rounded w-20 text-red-50"
-                onClick={() => handleAdd(valor)}
+                onClick={() => adicionarProduto({ id, title, valor, src })}
               >
                 Adicionar
               </button>
@@ -54,9 +53,6 @@ const Index = () => {
             </div>
           </div>
         ))}
-      </div>
-      <div className="text-right p-4">
-        <h2 className="text-xl font-bold">Total: R${total.toFixed(2)}</h2>
       </div>
     </div>
   );
