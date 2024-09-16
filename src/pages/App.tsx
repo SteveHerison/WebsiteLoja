@@ -1,17 +1,14 @@
-import { useState } from "react";
 import Layout from "../layout";
 import Home from "./home";
-import Carrinho from "../components/Carrinho";
+import { UserProvider } from "../contexts/UserContext";
 
 const App = () => {
-  const [openModal, setOpenModal] = useState(false);
   return (
-    <div className="">
-      <Layout setOpenModal={setOpenModal}>
+    <UserProvider>
+      <Layout>
         <Home />
-        {openModal && <Carrinho />}
       </Layout>
-    </div>
+    </UserProvider>
   );
 };
 

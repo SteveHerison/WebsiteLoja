@@ -3,7 +3,7 @@ import Menu from "./Menu";
 
 const Navbar = () => {
   return (
-    <div className="h-full w-full md:w-52 absolute md:relative flex">
+    <aside className="h-full w-full md:w-52 absolute md:relative flex">
       <div className="flex flex-col w-1/2 md:w-52  bg-gray-800 text-white items-center ">
         <div className="flex flex-col items-center w-full">
           <img
@@ -20,7 +20,7 @@ const Navbar = () => {
         </div>
       </div>
       <div className=" w-1/2 h-full bg-black/20 md:absolute md:-z-10" />
-    </div>
+    </aside>
   );
 };
 
