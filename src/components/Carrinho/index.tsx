@@ -23,7 +23,7 @@ const Carrinho = () => {
     let mensagem = "Olá, gostaria de fazer o seguinte pedido:\n\n";
 
     produtosSelecionados.forEach(({ title, quantidade, valor }) => {
-      mensagem += `- ${quantidade}x ${title}: R$${valor.toFixed(2)} cada\n`;
+      mensagem += `- ${quantidade}x ${title}: R$${valor.toFixed(2)}`;
     });
 
     mensagem += `\nTotal: R$${total.toFixed(2)}`;
