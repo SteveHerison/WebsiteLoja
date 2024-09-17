@@ -1,8 +1,13 @@
-/** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        lobster: ["Lobster", "sans-serif"],
+        indie: ["Indie Flower", "cursive"],
+        spicy: ["Spicy Rice", "cursive"],
+      },
+    },
   },
   plugins: [],
 };

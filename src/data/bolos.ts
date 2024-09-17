@@ -17,7 +17,7 @@ export const listBolo: Produto[] = [
   },
   {
     id: 2,
-    src: FotoTres,
+    src: FotoDois,
     title: "Delicia de Ninho",
     description:
       "Bolo com a massa branca ou bolo com a massa de chocolate, com recheio de Ninho.",
@@ -26,7 +26,7 @@ export const listBolo: Produto[] = [
   },
   {
     id: 3,
-    src: FotoDois,
+    src: FotoQuatro,
     title: "Delicia de ChocoNinho",
     description:
       "Bolo com a massa branca ou bolo com a massa de chocolate, com recheio de Chocolate 50% Cacau & Ninho.",
@@ -35,9 +35,10 @@ export const listBolo: Produto[] = [
   },
   {
     id: 4,
-    src: FotoQuatro,
-    title: "Delicia de Ninho com Morango",
-    description: "Bolo com a massa branca com recheio de Ninho com Morango.",
+    src: FotoTres,
+    title: "Delicia de Chantininho com Morango",
+    description:
+      "Bolo com a massa branca com recheio de Chantininho com Morango.",
     valor: 12,
     quantidade: 0,
   },

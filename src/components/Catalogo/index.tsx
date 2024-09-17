@@ -23,8 +23,10 @@ const Index = () => {
               className="w-full h-40 object-cover rounded-t-xl"
             />
             <div className="text-center bg-red-50 rounded-b-xl w-full px-1">
-              <h3 className="text-xl font-semibold text-yellow-950">{title}</h3>
-              {description}
+              <h3 className="text-xl font-semibold text-yellow-950 font-indie">
+                {title}
+              </h3>
+              <p className="font-indie">{description}</p>
             </div>
           </label>
           <div className="flex items-center justify-between">
@@ -39,13 +41,13 @@ const Index = () => {
             <div className="text-sm flex gap-2">
               {id === 4 ? (
                 <>
-                  <p className="line-through">R$19,00</p>
-                  <p className="font-semibold">R$12,00</p>
+                  <p className="line-through font-spicy">R$19,00</p>
+                  <p className=" font-spicy">R$12,00</p>
                 </>
               ) : (
                 <>
-                  <p className="line-through">R$ 17,00</p>
-                  <p className="font-semibold">R$10,00</p>
+                  <p className="line-through font-spicy">R$ 17,00</p>
+                  <p className="font-spicy">R$10,00</p>
                 </>
               )}
             </div>

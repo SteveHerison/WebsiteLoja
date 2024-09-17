@@ -13,8 +13,10 @@ const Home = () => {
 
   return (
     <main className="w-full h-full overflow-y-auto">
-      <nav>
-        <h2 className="text-3xl text-center">Bolos de Pote disponíveis</h2>
+      <nav className="flex flex-col py-4 gap-5">
+        <h2 className="text-4xl text-center font-spicy text-yellow-950">
+          Delícias no Pote
+        </h2>
         <Index />
         {openModal && <Carrinho />}
       </nav>

@@ -22,11 +22,11 @@ const Header = () => {
           />
         </div>
         <div className="flex items-center relative">
-          <input
+          {/* <input
             type="text"
             placeholder="Buscar"
             className="border pl-8 pr-5 rounded-xl focus:outline-none focus:border-orange-950"
-          />
+          /> */}
           <img src={Lupa} alt="Lupa" className="w-5 h-5 absolute left-2" />
         </div>
         <button>
