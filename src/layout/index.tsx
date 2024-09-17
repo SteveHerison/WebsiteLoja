@@ -1,5 +1,4 @@
 import { ReactNode } from "react";
-import Footer from "../components/Footer";
 import Header from "../components/Header";
 
 type LayoutProps = {
@@ -12,7 +11,7 @@ const Layout = ({ children }: LayoutProps) => {
       <div className="flex flex-col h-full w-full">
         <Header />
         {children}
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </div>
   );

@@ -18,6 +18,28 @@ const Carrinho = () => {
     adicionarProduto,
   } = carrinhoContext;
 
+  // Função que gera a mensagem do pedido
+  const gerarMensagemPedido = () => {
+    let mensagem = "Olá, gostaria de fazer o seguinte pedido:\n\n";
+
+    produtosSelecionados.forEach(({ title, quantidade, valor }) => {
+      mensagem += `- ${quantidade}x ${title}: R$${valor.toFixed(2)} cada\n`;
+    });
+
+    mensagem += `\nTotal: R$${total.toFixed(2)}`;
+
+    return mensagem;
+  };
+
+  // Função para redirecionar para o WhatsApp
+  const enviarPedidoViaWhatsApp = () => {
+    const telefone = "5511999999999"; // Substitua pelo número de telefone do seu WhatsApp
+    const mensagem = encodeURIComponent(gerarMensagemPedido()); // Codifica a mensagem para URL
+    const url = `https://api.whatsapp.com/send?phone=${telefone}&text=${mensagem}`;
+
+    window.open(url, "_blank"); // Abre o WhatsApp em uma nova aba
+  };
+
   return (
     <figure className="fixed inset-0 z-50 flex justify-center items-center bg-black/30">
       <div className="bg-white relative border-black w-4/5 h-4/5 rounded-xl p-4 overflow-y-auto flex flex-col justify-between">
@@ -84,7 +106,13 @@ const Carrinho = () => {
                     <button
                       className="text-red-600 font-bold text-2xl"
                       onClick={() =>
-                        adicionarProduto({ id, src, title, valor })
+                        adicionarProduto({
+                          id,
+                          src,
+                          title,
+                          valor,
+                          quantidade: 1,
+                        })
                       }
                     >
                       <img src={Soma} alt="Soma" className="w-5 h-5" />
@@ -95,9 +123,21 @@ const Carrinho = () => {
             )
           )}
         </div>
-        <div className="mt-4 flex justify-between font-bold">
-          <span>Total:</span>
-          <span>R${total.toFixed(2)}</span>
+        <div className="flex flex-col">
+          <div className="mt-4 flex justify-between font-bold">
+            <span>Total:</span>
+            <span>R${total.toFixed(2)}</span>
+          </div>
+          <div className="flex justify-end">
+            {produtosSelecionados.length !== 0 && (
+              <button
+                className="bg-yellow-950 text-red-100 p-2 rounded-xl mt-2 w-44"
+                onClick={enviarPedidoViaWhatsApp} // Chama a função para enviar o pedido
+              >
+                Pedir
+              </button>
+            )}
+          </div>
         </div>
       </div>
     </figure>

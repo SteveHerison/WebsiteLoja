@@ -7,4 +7,5 @@ export interface CarrinhoContextType {
   total: number;
   adicionarProduto: (produto: Produto) => void;
   removerProduto: (produto: Produto) => void;
+  alertAdd: boolean;
 }

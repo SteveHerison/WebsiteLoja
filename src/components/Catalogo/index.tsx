@@ -29,8 +29,10 @@ const Index = () => {
           </label>
           <div className="flex items-center justify-between">
             <button
-              className="bg-yellow-950 p-1 rounded w-20 text-red-50"
-              onClick={() => adicionarProduto({ id, title, valor, src })}
+              className="bg-yellow-950 p-1 rounded w-20 text-red-50 hover:bg-yellow-900"
+              onClick={() =>
+                adicionarProduto({ id, title, valor, src, quantidade: 1 })
+              }
             >
               Adicionar
             </button>

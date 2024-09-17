@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useState } from "react";
+import { createContext, ReactNode, useEffect, useState } from "react";
 import { CarrinhoContextType } from "../types/carrinhoType";
 import { Produto } from "../types/listBolo";
 
@@ -12,6 +12,7 @@ export const UserProvider = ({ children }: Props) => {
     []
   );
   const [total, setTotal] = useState(0);
+  const [alertAdd, setAlertAdd] = useState(false);
 
   const adicionarProduto = (produto: Produto) => {
     setProdutoSelecionados((prev) => {
@@ -25,8 +26,21 @@ export const UserProvider = ({ children }: Props) => {
         return [...prev, { ...produto, quantidade: 1 }];
       }
     });
+
     setTotal((prevTotal) => prevTotal + produto.valor);
+
+    setAlertAdd(true);
   };
+
+  useEffect(() => {
+    if (alertAdd) {
+      const timer = setTimeout(() => {
+        setAlertAdd(false);
+      }, 2000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [alertAdd]);
 
   const removerProduto = (produto: Produto) => {
     setProdutoSelecionados((prev) => {
@@ -61,6 +75,7 @@ export const UserProvider = ({ children }: Props) => {
         openModal,
         handleOpenModal,
         removerProduto,
+        alertAdd,
       }}
     >
       {children}
