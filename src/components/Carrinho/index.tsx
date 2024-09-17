@@ -33,7 +33,7 @@ const Carrinho = () => {
 
   // Função para redirecionar para o WhatsApp
   const enviarPedidoViaWhatsApp = () => {
-    const telefone = "5511999999999"; // Substitua pelo número de telefone do seu WhatsApp
+    const telefone = "5585997224241"; // Substitua pelo número de telefone do seu WhatsApp
     const mensagem = encodeURIComponent(gerarMensagemPedido()); // Codifica a mensagem para URL
     const url = `https://api.whatsapp.com/send?phone=${telefone}&text=${mensagem}`;
 
