@@ -23,11 +23,9 @@ const Carrinho = () => {
     let mensagem = "Olá, gostaria de fazer o seguinte pedido:\n\n";
 
     produtosSelecionados.forEach(({ title, quantidade, valor }) => {
-      mensagem += `- ${quantidade}x ${title}: R$${valor.toFixed(2)}`;
+      mensagem += `- ${quantidade} ${title}: R$${valor.toFixed(2)}`;
     });
-
     mensagem += `\nTotal: R$${total.toFixed(2)}`;
-
     return mensagem;
   };
 
@@ -36,7 +34,6 @@ const Carrinho = () => {
     const telefone = "5585997224241"; // Substitua pelo número de telefone do seu WhatsApp
     const mensagem = encodeURIComponent(gerarMensagemPedido()); // Codifica a mensagem para URL
     const url = `https://api.whatsapp.com/send?phone=${telefone}&text=${mensagem}`;
-
     window.open(url, "_blank"); // Abre o WhatsApp em uma nova aba
   };
 

@@ -5,7 +5,7 @@ const AlertAdd = () => {
     <div className="absolute top-2 left-1/2 -translate-x-1/2 max-w-full">
       <div className="p-1 text-red-200 bg-yellow-950 font-semibold rounded-xl w-full ">
         <span className="flex items-center">
-          <p className="text-sm">Adicionado com sucesso!</p>
+          <p className="text-sm">Adicionado</p>
           <img src={LogoCheck} alt="" className="w-6 h-6 rounded-full" />
         </span>
       </div>

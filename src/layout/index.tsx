@@ -14,7 +14,7 @@ const Layout = ({ children }: LayoutProps) => {
     // Exibe o aviso por 10 segundos
     const timer = setTimeout(() => {
       setAviso(false); // Oculta o aviso após 10 segundos
-    }, 5000);
+    }, 3000);
 
     // Limpa o timer ao desmontar o componente
     return () => clearTimeout(timer);
