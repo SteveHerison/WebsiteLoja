@@ -5,7 +5,7 @@ const Promocao = () => {
         <figure className="flex flex-col items-center h-full w-full p-2">
           <h2 className="text-3xl text-center">
             Seja bem vindo <br />
-            <p className="text-2xl"> Ao </p>
+            <p className="text-2xl"> ao </p>
             <span className="text-3xl">Delicias da Manda</span>
           </h2>
           <div className="h-full flex items-center justify-center bg-rose-100 w-full">

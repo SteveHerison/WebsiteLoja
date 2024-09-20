@@ -20,11 +20,12 @@ const Carrinho = () => {
 
   // Função que gera a mensagem do pedido
   const gerarMensagemPedido = () => {
-    let mensagem = "Olá, gostaria de fazer o seguinte pedido:\n\n";
+    let mensagem = "Olá, gostaria de fazer o seguinte pedido:\n";
 
     produtosSelecionados.forEach(({ title, quantidade, valor }) => {
-      mensagem += `- ${quantidade} ${title}: R$${valor.toFixed(2)}`;
+      mensagem += `- ${quantidade} ${title}: R$${valor.toFixed(2)}\n`; // Adiciona uma quebra de linha aqui
     });
+
     mensagem += `\nTotal: R$${total.toFixed(2)}`;
     return mensagem;
   };
