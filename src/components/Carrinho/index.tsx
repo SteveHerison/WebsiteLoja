@@ -22,8 +22,8 @@ const Carrinho = () => {
   const gerarMensagemPedido = () => {
     let mensagem = "Olá, gostaria de fazer o seguinte pedido:\n";
 
-    produtosSelecionados.forEach(({ title, quantidade, valor }) => {
-      mensagem += `- ${quantidade} ${title}: R$${valor.toFixed(2)}\n`; // Adiciona uma quebra de linha aqui
+    produtosSelecionados.forEach(({ subtitle, quantidade, valor }) => {
+      mensagem += `- ${quantidade} ${subtitle}: R$${valor.toFixed(2)}\n`; // Adiciona uma quebra de linha aqui
     });
 
     mensagem += `\nTotal: R$${total.toFixed(2)}`;
@@ -40,7 +40,7 @@ const Carrinho = () => {
 
   return (
     <figure className="fixed inset-0 z-50 flex justify-center items-center bg-black/30">
-      <div className="bg-white relative border-black w-4/5 h-4/5 rounded-xl p-4 overflow-y-auto flex flex-col justify-between">
+      <div className="bg-white relative border-black w-4/5 max-h-[80%] rounded-xl p-4 flex flex-col">
         <button
           className="p-2 bg-black rounded text-white absolute right-2 top-2"
           onClick={handleOpenModal}
@@ -48,11 +48,7 @@ const Carrinho = () => {
           X
         </button>
         <h2 className="text-2xl font-bold mb-4">Carrinho</h2>
-        <div
-          className={`flex flex-col gap-4 ${
-            produtosSelecionados.length && "h-full"
-          }`}
-        >
+        <div className="flex-grow overflow-y-auto">
           {produtosSelecionados.length === 0 ? (
             <div className="h-full w-full flex flex-col items-center">
               <img src={Logo} alt="" className="h-72 w-72" />
@@ -62,7 +58,7 @@ const Carrinho = () => {
             </div>
           ) : (
             produtosSelecionados.map(
-              ({ id, src, title, valor, quantidade }) => (
+              ({ id, src, subtitle, title, valor, quantidade }) => (
                 <div
                   key={id}
                   className="flex items-center justify-between p-2 border-b border-gray-300 w-full"
@@ -74,7 +70,7 @@ const Carrinho = () => {
                       className="w-16 h-16 object-cover rounded"
                     />
                     <div>
-                      <h3 className="font-semibold">{title}</h3>
+                      <h3 className="font-semibold">{subtitle}</h3>
                       <p className="text-sm">{quantidade}x</p>
                       <span className="font-semibold flex gap-2">
                         <p className={`${quantidade !== 1 && "line-through"}`}>
@@ -90,7 +86,7 @@ const Carrinho = () => {
                     <button
                       className="text-red-600 font-bold text-xl "
                       onClick={() =>
-                        removerProduto({ id, src, title, valor, quantidade })
+                        removerProduto({ id, src, subtitle, valor, quantidade })
                       }
                     >
                       {quantidade === 1 ? (
@@ -100,14 +96,13 @@ const Carrinho = () => {
                       )}
                     </button>
                     <p className="text-black">{quantidade}</p>
-
                     <button
                       className="text-red-600 font-bold text-2xl"
                       onClick={() =>
                         adicionarProduto({
                           id,
                           src,
-                          title,
+                          subtitle,
                           valor,
                           quantidade: 1,
                         })
@@ -121,22 +116,22 @@ const Carrinho = () => {
             )
           )}
         </div>
-        <div className="flex flex-col">
-          <div className="mt-4 flex justify-between font-bold">
-            <span>Total:</span>
-            <span>R${total.toFixed(2)}</span>
-          </div>
-          <div className="flex justify-end">
-            {produtosSelecionados.length !== 0 && (
+        {produtosSelecionados.length !== 0 && (
+          <div className="flex flex-col mt-4">
+            <div className="flex justify-between font-bold">
+              <span>Total:</span>
+              <span>R${total.toFixed(2)}</span>
+            </div>
+            <div className="flex justify-end">
               <button
                 className="bg-yellow-950 text-red-100 p-2 rounded-xl mt-2 w-44"
-                onClick={enviarPedidoViaWhatsApp} // Chama a função para enviar o pedido
+                onClick={enviarPedidoViaWhatsApp}
               >
                 Pedir
               </button>
-            )}
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </figure>
   );

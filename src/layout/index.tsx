@@ -23,7 +23,6 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <div className="flex h-screen w-screen relative">
       {aviso && <Promocao />}{" "}
-      {/* Exibe o componente Promocao se 'aviso' for true */}
       <div className="flex flex-col h-full w-full">
         <Header />
         {children}

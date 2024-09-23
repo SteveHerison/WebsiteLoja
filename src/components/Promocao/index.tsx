@@ -12,7 +12,7 @@ const Promocao = () => {
             <span className="text-xl  text-yellow-950 h-full flex items-center">
               <p>
                 O valor Promocional válido até{" "}
-                <p className="text-center">23/09</p>
+                <p className="text-center">25/09</p>
               </p>
             </span>
           </div>
