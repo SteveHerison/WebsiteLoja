@@ -103,6 +103,7 @@ const Carrinho = () => {
                           id,
                           src,
                           title,
+                          subtitle,
                           valor,
                           quantidade: 1,
                         })
