@@ -22,8 +22,8 @@ const Carrinho = () => {
   const gerarMensagemPedido = () => {
     let mensagem = "Olá, gostaria de fazer o seguinte pedido:\n";
 
-    produtosSelecionados.forEach(({ subtitle, quantidade, valor }) => {
-      mensagem += `- ${quantidade} ${subtitle}: R$${valor.toFixed(2)}\n`; // Adiciona uma quebra de linha aqui
+    produtosSelecionados.forEach(({ title, quantidade, valor }) => {
+      mensagem += `- ${quantidade} ${title}: R$${valor.toFixed(2)}\n`; // Adiciona uma quebra de linha aqui
     });
 
     mensagem += `\nTotal: R$${total.toFixed(2)}`;
@@ -102,6 +102,7 @@ const Carrinho = () => {
                         adicionarProduto({
                           id,
                           src,
+                          title,
                           subtitle,
                           valor,
                           quantidade: 1,
