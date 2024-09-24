@@ -40,6 +40,7 @@ const Index = () => {
                   onClick={() =>
                     adicionarProduto({
                       id,
+                      title,
                       subtitle,
                       valor,
                       src,
@@ -97,6 +98,7 @@ const Index = () => {
                   onClick={() =>
                     adicionarProduto({
                       id,
+                      title,
                       subtitle,
                       valor,
                       src,
