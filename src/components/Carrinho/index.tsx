@@ -102,7 +102,7 @@ const Carrinho = () => {
                         adicionarProduto({
                           id,
                           src,
-                          subtitle,
+                          title,
                           valor,
                           quantidade: 1,
                         })
