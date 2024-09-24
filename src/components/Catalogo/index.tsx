@@ -16,18 +16,17 @@ const Index = () => {
       </h2>
       <section className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 p-3">
         {listBolo
-          .slice(0, 4)
+          .slice(0, 5)
           .map(({ id, src, description, title, subtitle, valor }) => (
             <div key={id} className="flex flex-col gap-2">
-              <label
-                htmlFor=""
-                className="flex flex-col justify-center items-center rounded text-sm"
-              >
-                <img
-                  src={src}
-                  alt={`Bolo ${id}`}
-                  className="w-full h-40 object-cover rounded-t-xl"
-                />
+              <label className="flex flex-col justify-center items-center rounded text-sm h-full">
+                <div className="w-full h-52 flex items-center justify-center">
+                  <img
+                    src={src}
+                    alt={`Bolo ${id}`}
+                    className="object-cover h-full w-full rounded-t-xl"
+                  />
+                </div>
                 <div className="text-center bg-red-50 rounded-b-xl w-full px-1">
                   <h3 className="text-xl font-semibold text-yellow-950 font-indie">
                     {title}
@@ -73,7 +72,7 @@ const Index = () => {
       </h2>
       <section className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 p-3">
         {listBolo
-          .slice(4)
+          .slice(5)
           .map(({ id, src, description, title, subtitle, valor }) => (
             <div key={id} className="flex flex-col gap-2">
               <label

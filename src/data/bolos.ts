@@ -2,6 +2,7 @@ import FotoUm from "../assets/fotosBolo/um.png";
 import FotoDois from "../assets/fotosBolo/dois.png";
 import FotoTres from "../assets/fotosBolo/tres.png";
 import FotoQuatro from "../assets/fotosBolo/quatro.png";
+import FotoSetima from "../assets/fotosBolo/sete.png";
 import Fotoquinta from "../assets/fotosBolo/cinco.png";
 import Fotosexta from "../assets/fotosBolo/seis.png";
 
@@ -50,6 +51,15 @@ export const listBolo: Produto[] = [
   },
   {
     id: 5,
+    src: FotoSetima,
+    title: "Delicia de Prestigio",
+    subtitle: "Prestigio",
+    description: "Bolo com a massa branca com recheio de Coco com Brigadeiro.",
+    valor: 12,
+    quantidade: 0,
+  },
+  {
+    id: 6,
     src: Fotoquinta,
     title: "Delicia de Brigadeiro",
     subtitle: "Brigadeiro",
@@ -58,7 +68,7 @@ export const listBolo: Produto[] = [
     quantidade: 0,
   },
   {
-    id: 6,
+    id: 7,
     src: Fotosexta,
     title: "Delicia de Chantininho",
     subtitle: "Chantininho",
