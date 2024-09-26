@@ -53,13 +53,15 @@ const Index = () => {
                 <div className="text-sm flex gap-2">
                   {id === 4 ? (
                     <>
-                      <p className="line-through font-spicy">R$16,00</p>
-                      <p className=" font-spicy">R$12,00</p>
+                      <p className=" font-spicy">R$16,00</p>
+                      {/* line-through */}
+                      {/* <p className=" font-spicy">R$12,00</p> */}
                     </>
                   ) : (
                     <>
-                      <p className="line-through font-spicy">R$ 14,00</p>
-                      <p className="font-spicy">R$10,00</p>
+                      <p className=" font-spicy">R$ 14,00</p>
+                      {/* line-through */}
+                      {/* <p className="font-spicy">R$10,00</p> */}
                     </>
                   )}
                 </div>
@@ -111,13 +113,14 @@ const Index = () => {
                 <div className="text-sm flex gap-2">
                   {id === 4 ? (
                     <>
-                      <p className="line-through font-spicy">R$8,00</p>
-                      <p className=" font-spicy">R$6,00</p>
+                      <p className=" font-spicy">R$8,00</p>
+                      {/* <p className=" font-spicy">R$6,00</p> */}
                     </>
                   ) : (
                     <>
-                      <p className="line-through font-spicy">R$ 8,00</p>
-                      <p className="font-spicy">R$6,00</p>
+                      <p className=" font-spicy">R$ 8,00</p>{" "}
+                      {/* line-through */}
+                      {/* <p className="font-spicy">R$6,00</p> */}
                     </>
                   )}
                 </div>
